@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/ícones/Logo Nexus.png" type="image/png">
+    <title>Login - Nexus Games</title>
+</head>
+<body class="login-page">
+
+    <div class="login-container">
+        <a href="index.html">
+            <img src="img/ícones/Logo Nexus.png" alt="Nexus Games" class="login-logo">
+        </a>
+
+        <h1 class="login-title">Entrar na conta</h1>
+        <p class="login-subtitle">Bem-vindo de volta, gamer! 🎮</p>
+
+        <form id="login-form" onsubmit="fazerLogin(event)">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" placeholder="seu@email.com" required>
+
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" placeholder="••••••••" required minlength="4">
+
+            <div class="login-options">
+                <label class="lembrar">
+                    <input type="checkbox" id="lembrar"> Lembrar de mim
+                </label>
+                <a href="#" class="esqueci">Esqueci a senha</a>
+            </div>
+
+            <button type="submit" class="login-btn">Entrar</button>
+        </form>
+
+        <p class="login-footer">
+            Não tem conta? <a href="cadastro.html">Cadastre-se</a>
+        </p>
+
+        <p class="login-voltar">
+            <a href="index.html">← Voltar para a loja</a>
+        </p>
+
+        <div id="login-status" class="login-status hidden"></div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

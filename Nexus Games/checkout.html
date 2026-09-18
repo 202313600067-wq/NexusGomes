@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/icones/icone-nexus.png" type="image/x-icon">
+    <title>Checkout - Nexus Games</title>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="img/outros/logo-nexus.png" alt="Logo Nexus Games" width="80px"></a>
+        <h1>Nexus Games</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#produtos">Produtos</a></li>
+                <li><a href="index.html#sobre">Sobre Nós</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- CARRINHO -->
+        <section id="cart">
+            <div class="container">
+                <h1>Seu Carrinho</h1>
+                <img src="img/ícones/carrinho.png" alt="carrinho" width="5%">
+            </div>
+            <br><br>
+
+            <div id="cart-items">
+                <!-- Produtos do carrinho serão inseridos via JavaScript -->
+            </div>
+            <br><br>
+
+            <div class="cart-summary">
+                <h1><b>Total: R$ <span id="cart-total">0,00</span></b></h1>
+                <br>
+                <label for="discount-code">Cupom de Desconto:</label><br>
+                <input type="text" id="discount-code" placeholder="Digite o cupom (ex: NEXUS10)"><br><br>
+                <button onclick="applyDiscount()">Aplicar Cupom</button>
+                <button onclick="clearCart()">Limpar Carrinho</button>
+            </div>
+        </section>
+
+        <!-- PAGAMENTO -->
+        <section id="payment">
+            <h2>Pagamento</h2>
+            <form id="payment-form">
+                <!-- PIX -->
+                <div class="container">
+                    <label>
+                        <input type="radio" name="payment-method" value="pix" onclick="updatePaymentMethod('pix')"><br>
+                        <img src="img/ícones/Pix.jpg" width="10%" alt="Pix"><br>(5% de desconto)
+                    </label>
+                </div>
+                <div id="pix-info" class="payment-info hidden">
+                    <br>
+                    <label for="pix-key">Chave Pix:</label>
+                    <input type="text" id="pix-key" placeholder="Digite sua chave Pix">
+                </div>
+
+                <!-- CARTÃO -->
+                <label>
+                    <br>
+                    <input type="radio" name="payment-method" value="credit" onclick="updatePaymentMethod('credit')"><br>
+                    <img src="img/ícones/cartão.jpg" width="2%" alt="Cartão de Crédito">
+                </label>
+                <div id="credit-info" class="payment-info hidden">
+                    <label for="card-number">Número do Cartão:</label>
+                    <input type="text" id="card-number" placeholder="Número do cartão">
+
+                    <br><br>
+                    <label for="card-expiry">Validade:</label>
+                    <input type="text" id="card-expiry" placeholder="MM/AA">
+
+                    <br><br>
+                    <label for="card-cvv">CVV:</label>
+                    <input type="text" id="card-cvv" placeholder="CVV">
+                </div>
+
+                <br>
+                <button type="button" onclick="processPayment()">Finalizar Compra</button>
+            </form>
+        </section>
+
+        <!-- STATUS -->
+        <section id="payment-status" class="hidden">
+            <h2>Status do Pagamento</h2>
+            <p id="status-message"></p>
+        </section>
+    </main>
+
+    <br><br>
+
+    <footer>
+        <p>Obrigado por comprar na Nexus Games!</p>
+        <br>
+        <p>Para entrar em contato <a href="mailto:contato@nexusgames.com">clique aqui</a></p>
+        <p>Siga-nos nas redes sociais:</p>
+        <ul>
+            <li><a href="https://instagram.com" target="_blank"><img src="img/ícones/Insta.jpg"Instagram" width="50px"></a></li>
+            <li><a href="https://twitter.com" target="_blank"><img src="img/icones/x.png" alt="X (Twitter)" width="50px"></a></li>
+        </ul>
+        <p>&copy; 2026 Nexus Games - Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
